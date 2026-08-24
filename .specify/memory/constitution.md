@@ -1,8 +1,9 @@
 <!--
 Version change: 1.3.0 → 1.5.0
 List of modified principles: None
-Added principles:
-- III. Dependencias entre Módulos (nuevo)
+Modified principles:
+- I. Calidad del Código: se añade el bloque "Stack tecnológico (fijo para todo el proyecto)"
+- II. Arquitectura: se elimina la oración que se solapaba con el Principio III
 Added sections: None
 Removed sections: None
 Resolved TODOs: None
