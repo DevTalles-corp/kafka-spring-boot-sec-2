@@ -62,4 +62,4 @@ La presente constitución prevalece sobre cualquier otra práctica o convención
 - **Política de versionado**: Se utiliza versionado semántico (MAJOR.MINOR.PATCH). MAJOR para eliminaciones o redefiniciones de principios de gobernanza; MINOR para nuevos principios o expansiones de guía; PATCH para aclaraciones, redacción o correcciones no sustanciales.
 - **Revisión de cumplimiento**: Toda revisión de código y todo pull request deben verificar el cumplimiento de estos principios. La complejidad no justificada debe rechazarse y toda excepción debe justificarse explícitamente por escrito.
 
-**Version**: 1.4.1 | **Ratified**: 2026-08-13 | **Last Amended**: 2026-08-19
+**Version**: 1.5.0 | **Ratified**: 2026-08-13 | **Last Amended**: 2026-08-19
