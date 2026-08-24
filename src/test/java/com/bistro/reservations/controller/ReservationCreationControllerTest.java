@@ -57,6 +57,23 @@ class ReservationCreationControllerTest {
     }
 
     @Test
+    void shouldReturn400WhenPartySizeExceeds12() throws Exception {
+        mockMvc.perform(post("/api/v1/reservations")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "customerName": "Marta Ruiz",
+                                  "customerEmail": "marta@example.com",
+                                  "reservationTime": "2026-08-20T20:00:00",
+                                  "partySize": 13
+                                }
+                                """))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.title").value("Solicitud inválida"))
+                .andExpect(jsonPath("$.errors").isArray());
+    }
+
+    @Test
     void shouldReturn400ForInvalidRequest() throws Exception {
         mockMvc.perform(post("/api/v1/reservations")
                         .contentType(MediaType.APPLICATION_JSON)

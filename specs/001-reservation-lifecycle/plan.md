@@ -35,6 +35,7 @@ El sistema debe aceptar solicitudes de reserva (nombre, email, fecha/hora, comen
 - Endpoints versionados bajo `/api/v1/`.
 - Rechazo por falta de mesa = resultado exitoso (HTTP 200), no error del sistema.
 - No doble asignación de mesa en la misma franja (FR-008) garantizado por bloqueo pesimista + constraint a nivel BD.
+- Validación de entrada: `partySize` máximo 12 (FR-012); solicitudes con `partySize > 12` devuelven HTTP 400 sin crear reserva ni evaluar disponibilidad.
 
 **Scale/Scope**: Un restaurante; volumen bajo; sin autenticación.
 

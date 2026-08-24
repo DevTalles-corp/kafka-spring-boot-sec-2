@@ -26,5 +26,6 @@ public class ReservationRequest {
 
     @NotNull(message = "La cantidad de comensales es obligatoria")
     @Positive(message = "La cantidad de comensales debe ser mayor a cero")
+    @Max(value = 12, message = "La cantidad de comensales no puede superar las 12 personas")
     private Integer partySize;
 }

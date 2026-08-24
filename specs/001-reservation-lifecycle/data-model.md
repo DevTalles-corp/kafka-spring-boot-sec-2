@@ -23,7 +23,7 @@ Represents a reservation request and its final disposition.
 | customerName | VARCHAR/STRING | NOT NULL | Name of the customer |
 | customerEmail | VARCHAR/STRING | NOT NULL, valid email format | Customer contact email |
 | reservationTime | TIMESTAMP | NOT NULL | Date and time of the reservation (local restaurant time) |
-| partySize | INT | NOT NULL, > 0 | Number of diners |
+| partySize | INT | NOT NULL, > 0, ≤ 12 | Number of diners |
 | status | ENUM | NOT NULL | PENDING, CONFIRMED, REJECTED |
 | assignedTableId | BIGINT FK → tables.id | NULLABLE | Assigned table when CONFIRMED |
 | createdAt | TIMESTAMP | NOT NULL | When the request was received |

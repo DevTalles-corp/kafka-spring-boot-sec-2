@@ -27,6 +27,8 @@ NO usar `domain`, `application`, `api`, `infrastructure` ni capas de arquitectur
 
 El manejo global de excepciones debe implementarse con `@RestControllerAdvice` y `ProblemDetail` (RFC 7807). La validación de entrada debe realizarse con Bean Validation en los DTOs.
 
+**Stack tecnológico (fijo para todo el proyecto):** Java 21, Spring Boot 4.1.x (starter web `spring-boot-starter-webmvc`), Maven, JPA con PostgreSQL (H2 para dev/test), Flyway para migraciones. Toda generación de código y todo plan deben respetar estas versiones; no se deben usar versiones anteriores (por ejemplo, Spring Boot 3.x) ni el starter `spring-boot-starter-web` (nomenclatura 3.x).
+
 ### II. Arquitectura
 
 Se adoptará una arquitectura de monolito modular, resultando en un único artefacto desplegable con módulos que mantengan fronteras bien definidas. Los módulos se organizarán como sub-packages (ej., reservations, tables, notifications).

@@ -69,6 +69,23 @@ curl -X POST http://localhost:8080/api/v1/reservations \
 
 Expected: HTTP 400 `application/problem+json` with validation errors array.
 
+### S3b — partySize greater than 12 returns 400
+
+FR-012: the system must reject any request whose partySize exceeds 12 as an input-validation error, without creating a reservation or evaluating table availability.
+
+```bash
+curl -X POST http://localhost:8080/api/v1/reservations \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "customerName": "Marta Ruiz",
+    "customerEmail": "marta@example.com",
+    "reservationTime": "2026-08-20T20:00:00",
+    "partySize": 13
+  }'
+```
+
+Expected: HTTP 400 `application/problem+json` with a validation error indicating that `partySize` must be at most 12. No reservation is created.
+
 ### S4 — Get status of an existing reservation
 
 Use the `reservationCode` returned by S1:

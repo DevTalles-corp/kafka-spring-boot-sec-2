@@ -24,6 +24,7 @@ El cliente envía una solicitud de reserva indicando su nombre, su email, la fec
 2. **Given** que no existe ninguna mesa libre con capacidad suficiente en la franja solicitada, **When** el cliente envía una solicitud de reserva válida, **Then** la reserva queda REJECTED y la respuesta informa el rechazo como resultado exitoso de la operación, no como un error del sistema.
 3. **Given** una solicitud de reserva válida, **When** el sistema la procesa, **Then** la reserva nace en PENDING y termina en CONFIRMED o REJECTED.
 4. **Given** una solicitud con datos inválidos (email sin formato válido, cantidad de comensales no positiva, fecha u hora ausente o inválida), **When** el cliente la envía, **Then** el sistema la rechaza por validación y no crea la reserva.
+5. **Given** una solicitud cuya cantidad de comensales supera las 12 personas, **When** el cliente la envía, **Then** el sistema la rechaza por validación de entrada y no crea la reserva ni evalúa disponibilidad de mesas.
 
 ---
 
@@ -66,6 +67,7 @@ El cliente consulta el estado actual de su reserva usando el código que recibi�
 - **FR-009**: El cliente DEBE poder consultar el estado actual de su reserva utilizando únicamente el código de reserva.
 - **FR-010**: El sistema DEBE validar los datos de entrada antes de crear la reserva: email con formato válido, cantidad de comensales mayor a cero, y fecha y hora presentes y válidas.
 - **FR-011**: El sistema DEBE garantizar que el código de reserva sea único entre todas las reservas.
+- **FR-012**: El sistema DEBE rechazar por validación de entrada toda solicitud cuya cantidad de comensales supere las 12 personas, sin crear la reserva ni evaluar disponibilidad de mesas. Este límite es una validación de entrada (solicitud inválida), distinta del rechazo de negocio (REJECTED): el REJECTED aplica a solicitudes válidas para las que no hay mesa disponible.
 
 ### Key Entities *(include if feature involves data)*
 
