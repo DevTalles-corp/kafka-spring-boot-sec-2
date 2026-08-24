@@ -1,5 +1,5 @@
 <!--
-Version change: 1.3.0 → 1.4.0
+Version change: 1.3.0 → 1.5.0
 List of modified principles: None
 Added principles:
 - III. Dependencias entre Módulos (nuevo)
